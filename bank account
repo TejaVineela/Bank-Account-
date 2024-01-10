@@ -1,0 +1,41 @@
+class bank:
+    def __init__(self,AccountNumber,NameofTheAccountHolder,Balance=0):
+        self.AccountNumber=AccountNumber
+        self.NameofTheAccountHolder=NameofTheAccountHolder
+        self.Balance=0
+    def customer_information(self):
+        print("Customer Name: ",{self.NameofTheAccountHolder})
+        print("Customer Account Number: ",{self.AccountNumber})
+    def deposit(self):
+        cash=float(input("enter amount to deposit:"))
+        self.Balance=self.Balance+cash
+        print("Dear Customer,",cash,"is credited to your account successfully")
+    def withdrawl(self):
+        cash=float(input("enter amount to withdraw:"))
+        if cash>self.Balance:
+            print("Dear Customer,your account has the insufficient funds for withdrawl")
+        else:
+            self.Balance=self.Balance-cash
+            print("Dear Customer",cash,"is withdrawl from your account")
+    def check_balance(self):
+        print("current Balance",{self.Balance})
+        
+customer1=bank(79819,"Teja")
+customer2=bank(93466,"vinay")
+customer3=bank(99087,"swapna")
+
+print("customer 1 bank account information")
+customer1.customer_information()
+customer1.deposit()
+customer1.check_balance()
+
+print("\ncustomer 2 bank account information")
+customer2.customer_information()
+customer2.deposit()
+customer2.withdrawl()
+
+print("\ncustomer 3 bank account information")
+customer3.customer_information()
+customer3.deposit()
+customer3.withdrawl()
+customer3.check_balance()
