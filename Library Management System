@@ -4,15 +4,11 @@ class Book:
         self.author=author
         self.book_id=book_id
         self.is_accessible=True
-    def _str_(self):
-        return f"{self.title} by {self.author} (ID: {self.book_id})"
 
 class Member:
     def __init__(self,name,mem_id):
         self.name=name
         self.mem_id=mem_id
-    def _str_(self):
-        return f"{self.name} (ID: {self.mem_id})"
 
 class Library:
     def __init__(self,books,members):
